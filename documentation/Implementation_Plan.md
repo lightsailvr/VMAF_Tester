@@ -3,6 +3,22 @@
 ## Project Overview
 Building a native macOS app using SwiftUI for 8K video quality analysis, specifically designed for comparing Apple ProRes reference files against H.265 encoded videos with advanced visualization and progress tracking.
 
+## Development Progress Tracking
+
+### Completed Phases with Git Commits
+- **✅ Phase 1.1** - Environment Setup (`9e4e8a9`) - Xcode project setup with comprehensive logging
+- **✅ Phase 1.2** - Dependencies Integration (`38d481e`) - VMAF & FFmpeg integration with Swift wrappers
+- **🚧 Phase 1.3** - Core Data Models (In Progress)
+- **⏳ Phase 1.4** - File Type Validation System (Pending)
+- **⏳ Phase 2.1** - File Selection Interface (Pending)
+- **⏳ Phase 2.2** - Model Selection Interface (Pending)
+- **⏳ Phase 2.3** - Basic UI Components (Pending)
+
+### Current Status
+- **Active Phase**: Phase 1 (Foundation & Setup)
+- **Next Milestone**: Phase 2 (File Management & UI Foundation)
+- **GitHub Repository**: https://github.com/lightsailvr/VMAF_Tester
+
 ## Architecture Overview
 
 ### Core Components
@@ -13,7 +29,7 @@ Building a native macOS app using SwiftUI for 8K video quality analysis, specifi
 5. **Export System** - Multiple format output support
 
 ### Technology Stack
-- **UI Framework**: SwiftUI (macOS 12.0+)
+- **UI Framework**: SwiftUI (macOS 14.0+)
 - **Video Processing**: FFmpeg (bundled)
 - **Quality Analysis**: VMAF binary (bundled)
 - **Charts**: Swift Charts (for interactive graphs)
@@ -30,6 +46,7 @@ After each major feature implementation (numbered sections like 2.1, 2.2, etc.),
 4. **Review log output** to ensure expected behavior
 5. **Fix any issues** before proceeding to the next feature
 6. **Commit working code** with descriptive commit messages
+7. **Push to GitHub repository** to maintain development history
 
 ### Logging Strategy
 Implement comprehensive logging throughout the app using OSLog:
@@ -65,6 +82,7 @@ Logger.vmafAnalysis.error("VMAF process failed: \(error.localizedDescription)")
 - Verify logging system works
 - Test app launches without errors
 - Validate project structure is correct
+- **Git Commit**: `9e4e8a9` - "✅ Phase 1.1 Complete: Xcode project setup with comprehensive logging"
 
 ### 1.2 Dependencies Integration
 - [ ] Compile VMAF binary for macOS (Intel + Apple Silicon)
@@ -79,6 +97,8 @@ Logger.vmafAnalysis.error("VMAF process failed: \(error.localizedDescription)")
 - Verify binaries are correctly bundled in app
 - Test Swift wrapper error handling
 - Review logs for proper tool detection and execution
+- **Git Commit**: `38d481e` - "✅ Phase 1.2 Complete: VMAF & FFmpeg Dependencies Integration"
+- **Status**: ✅ PASSED (PARTIAL) - Binary discovery working, process execution needs sandboxing configuration
 
 ### 1.3 Core Data Models
 ```swift
@@ -114,6 +134,7 @@ struct VMAFResults {
 - Verify model properties and relationships work correctly
 - Test serialization/deserialization if applicable
 - Review logs for proper model behavior
+- **Git Commit**: [To be completed] - Phase 1.3 completion
 
 ### 1.4 File Type Validation System
 - [ ] Create video format detection using AVFoundation
@@ -129,6 +150,7 @@ struct VMAFResults {
 - Verify error messages are user-friendly
 - Review logs for accurate format detection
 - Test edge cases: corrupted files, empty files, non-video files
+- **Git Commit**: [To be completed] - Phase 1.4 completion
 
 ## Phase 2: File Management & UI Foundation (Week 2)
 
@@ -148,6 +170,7 @@ struct VMAFResults {
 - Verify file info displays correctly (resolution, codec, duration)
 - Test with 8K files and verify performance
 - Review logs for file selection events and validation results
+- **Git Commit**: [To be completed] - Phase 2.1 completion
 
 ### 2.2 Model Selection Interface
 - [ ] Design model selection dropdown with descriptions
@@ -619,3 +642,41 @@ struct AnalysisProgressView: View {
 **Total Estimated Development Time**: 7 weeks
 
 This comprehensive plan addresses all the requirements while providing a structured approach to building a professional-grade VMAF analysis tool optimized for 8K video content.
+
+## Git Commit Standards
+
+### Commit Message Format
+Each phase completion follows this commit message format:
+```
+✅ Phase X.Y Complete: [Feature Name]
+
+🎯 PHASE X.Y - [Brief Description]
+- [Key achievement 1]
+- [Key achievement 2]
+- [Key achievement 3]
+
+🧪 TEST CHECKPOINT X.Y - [STATUS]
+- ✅ [Successful test 1]
+- ✅ [Successful test 2]
+- ⚠️ [Partial success or note]
+
+📊 TECHNICAL ACHIEVEMENTS:
+- [Technical detail 1]
+- [Technical detail 2]
+
+🚀 Ready for Phase X.Y+1: [Next Phase Name]
+✨ [Summary of readiness for next phase]
+```
+
+### Progress Tracking
+- Each test checkpoint must have a corresponding git commit
+- Commit messages include comprehensive details about what was accomplished
+- All commits are pushed to the main branch on GitHub
+- Progress is tracked both in this document and in git history
+- Failed test checkpoints are documented with the issues found and resolution plans
+
+### Repository Structure
+- **Main Branch**: All development work and completed phases
+- **Commit History**: Complete development timeline with detailed progress
+- **GitHub Issues**: Track any blockers or complex problems that arise
+- **Documentation**: Updated with each phase completion
