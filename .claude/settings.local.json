@@ -5,7 +5,9 @@
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(mkdir:*)",
-      "Bash(/Applications/Xcode-beta.app/Contents/Developer/usr/bin/xcodebuild -project VMAFAnalyzer.xcodeproj -scheme VMAFAnalyzer -configuration Debug build)"
+      "Bash(/Applications/Xcode-beta.app/Contents/Developer/usr/bin/xcodebuild -project VMAFAnalyzer.xcodeproj -scheme VMAFAnalyzer -configuration Debug build)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "deny": []
   }

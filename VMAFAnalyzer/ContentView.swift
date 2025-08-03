@@ -3,6 +3,7 @@ import OSLog
 
 struct ContentView: View {
     @State private var isLoaded = false
+    @StateObject private var vmafAnalyzer = VMAFAnalyzer()
     
     var body: some View {
         VStack(spacing: 20) {
@@ -62,11 +63,24 @@ struct ContentView: View {
     
     private func simulateLoading() {
         Logger.ui.debug("Starting app initialization simulation")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation {
-                isLoaded = true
+        
+        // Verify dependencies in background
+        Task {
+            let dependenciesOK = await vmafAnalyzer.verifyDependencies()
+            
+            await MainActor.run {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation {
+                        isLoaded = dependenciesOK
+                    }
+                    
+                    if dependenciesOK {
+                        Logger.ui.info("App initialization complete - UI ready for user interaction")
+                    } else {
+                        Logger.ui.error("App initialization failed - dependency verification failed")
+                    }
+                }
             }
-            Logger.ui.info("App initialization complete - UI ready for user interaction")
         }
     }
 }
