@@ -1,0 +1,85 @@
+# Xcode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+*.xcworkspace/*
+!*.xcworkspace/contents.xcworkspacedata
+!*.xcworkspace/xcshareddata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
+
+# CocoaPods
+Pods/
+*.podfile.lock
+
+# Carthage
+Carthage/
+
+# Accelo
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# Xcode Patch
+*.xcodeproj/
+
+# Bundled binaries
+**/Resources/ffmpeg
+**/Resources/vmaf
+**/Resources/bin/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# VMAF processing files
+*.y4m
+*.yuv
+vmaf_output_*.json
+vmaf_output_*.xml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+.apdisk
+
+# User-specific files
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+DerivedData/
+
+# Test results
+*.gcov
+*.profraw
