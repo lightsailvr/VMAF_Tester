@@ -25,7 +25,7 @@ A native macOS application built with SwiftUI for analyzing video quality using 
 
 ## Requirements
 
-- **macOS**: 12.0+ (for modern SwiftUI features)
+- **macOS**: 14.0+ (for latest SwiftUI features)
 - **Hardware**: Recommended for Apple Silicon Macs (optimized performance)
 - **Dependencies**: FFmpeg and VMAF binaries (bundled with app)
 
